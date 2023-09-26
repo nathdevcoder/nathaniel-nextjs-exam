@@ -1,0 +1,24 @@
+.reactStars:before {
+    position: absolute;
+    overflow: hidden;
+    display: block;
+    z-index: 1;
+    top: 0; left: 0;
+    width: 50%;
+    content: attr(data-forhalf);
+    color: #f36d22;
+}
+
+.startContainer {
+    overflow:hidden;
+    position:relative;
+}
+
+.Stars  {
+    position: relative; overflow: hidden; cursor: default; display: block; float: left; color: rgb(243, 109, 34); font-size: 22px;
+}
+
+.Starsb {
+    position: relative; overflow: hidden; cursor: default; display: block; float: left; color: gray; font-size: 22px;
+}
+ 
