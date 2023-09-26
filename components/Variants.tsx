@@ -9,7 +9,7 @@ export default function Variants({css, title, opt, avails}:{css?:string, title: 
         <div className="flex flex-wrap justify-center">
             {
                 opt.map (op =>{
-                    return <button disabled={!avails.includes(op)} value="BLUE" className={`w-28 m-1 p-0 text-xs ${avails.includes(op) ? 'bg-[#126B60] text-white': 'bg-[#f0f0f0] text-[#126B60] line-through'}`}>{op}</button>
+                    return <button key={Math.random()} disabled={!avails.includes(op)} value="BLUE" className={`w-28 m-1 p-0 text-xs ${avails.includes(op) ? 'bg-[#126B60] text-white': 'bg-[#f0f0f0] text-[#126B60] line-through'}`}>{op}</button>
                 })
             } 
         </div>

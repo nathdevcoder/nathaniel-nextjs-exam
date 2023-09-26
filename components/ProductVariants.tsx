@@ -41,7 +41,7 @@ export default function ProductVariants({name, variants, options}: {name: string
             options.map(opt=> {
                 const available: string[] = []
                 activeVariants?.forEach(d=>available.push(d.options[opt.name])) 
-                return <Variants css='mt-5' opt={opt.values} avails={available} title={opt.name} />
+                return <Variants key={Math.random()} css='mt-5' opt={opt.values} avails={available} title={opt.name} />
             })
         } 
         
