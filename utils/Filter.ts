@@ -3,7 +3,7 @@
 export function filterProducts(options: optionsType, variants: variantsType, actives: activesType | null, ind: number , value: string ): [activesType, variantType] {
     let data = []  as activesType
 
-    let reff: variantsType | null = null
+    let reff = null as  variantsType | null | undefined
 
     if(actives == null) {
         options.forEach((opt, i)=> { 
@@ -20,7 +20,10 @@ export function filterProducts(options: optionsType, variants: variantsType, act
             data.push({...opt, active: def, availables: avails})
         })
     } 
+
+    let detail = reff
+    if(value) detail = reff?.filter(d=> d.options[options[ind].name] == value) 
      
-    return [data, reff? reff[0] : { name: '', isAvailable: 'false',options: {}, price: 0 }] 
+    return [data, detail ? detail[0] : { name: '', isAvailable: 'false',options: {}, price: 0 }] 
     
 }

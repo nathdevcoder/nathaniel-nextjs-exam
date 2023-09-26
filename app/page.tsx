@@ -1,5 +1,4 @@
-import { getProducts } from "@src/Api/Product";
-import Breadcrumbs from "@src/components/Breadcrumbs";
+import { getProducts } from "@src/Api/Product"; 
 import Navbar from "@src/components/Navbar";
 import ProductMedia from "@src/components/ProductMedia";
 import ProductVariants from "@src/components/ProductVariants";
@@ -14,7 +13,7 @@ export default async function Home() {
   return (
     <main  >
      <Navbar />
-     <div className="flex justify-center">
+     <div className="flex flex-col md:flex-row justify-center items-center md:items-start  sm:p-10 md:p-2 ">
         <ProductMedia image={data.product.image}/>
         <ProductVariants name={data.product.name || ""} options={data.product.options || []} variants={data.product.variants || []}/>
      </div>
