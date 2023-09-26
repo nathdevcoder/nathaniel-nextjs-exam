@@ -10,15 +10,13 @@ export default async function Home() {
 
   const data = await getProducts('https://9xozpkins4.execute-api.ap-southeast-1.amazonaws.com/dev/api/product') 
 
-  if(!data) return <h2>oops something went wrong fetching product api</h2>
-  console.log(data.product.image);
-  
+  if(!data) return <h2>oops something went wrong fetching product api</h2> 
   return (
     <main  >
      <Navbar />
      <div className="flex justify-center">
         <ProductMedia image={data.product.image}/>
-        <ProductVariants />
+        <ProductVariants name={data.product.name || ""} options={data.product.options || []} variants={data.product.variants || []}/>
      </div>
     </main>
   )
